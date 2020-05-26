@@ -1,0 +1,33 @@
+.title{
+    text-align: center;
+    color: rgb(54, 46, 34);
+}
+
+.new-form, .loading{
+    align-items: center;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.header{
+    color: floralwhite;
+    
+}
+
+.button{
+    align-items: center;
+}
+.bodyc{
+    background-color: #99ffff ;
+}
+
+.tweets{
+
+    width: 40%;
+    margin: 0 auto;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(54, 46, 34) ;
+}
+
+
