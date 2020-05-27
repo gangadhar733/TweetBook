@@ -11,31 +11,41 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body class="bodyc">
-    <header>
-        <h1 class="title ">TWEET-BOOK</h1>
+    <header class="container ">
+        <h1 class="title ">💌TWEET-BOOK💌</h1>
     </header>
-    <main>
+    <main class="container">
+      <div class="row">   
 
-        <form class="new-form">
+        <form class="new-form col-5">
+          <div class="card">
             <div class="form-group">
               <label for="name">Name</label>
+              <i class="fa fa-envelope" aria-hidden="true"></i>
               <input class="form-control" type="text" id="name" name="name" placeholder="Enter your name here">
               <label for="content">Your Tweet</label>
               <textarea class="form-control" type="text" id="content" name="content" cols="60" rows="8" placeholder="what's happening...!"></textarea>
-              <button class="btn btn-primary  btn-lg" >
+              <button class="row offset-3 col-5 Buttons btn btn-primary btn-lg btn-block">
                   Tweet it!
               </button>
 
             </div>
-         
+          </div>
         </form>
         <div class="loading">
           <img src="loading.gif" alt="">
 
         </div>
-        <div class="tweets">
+
+        <div class="offset-1 col-2">
+          <h2>  Tweets: <br></h2>
+        </div>
+        
+        <div class="tweets   col-4">
+        
 
         </div>
+      </div>
     </main>
      <script src="client.js"></script> 
     <!-- Optional JavaScript -->

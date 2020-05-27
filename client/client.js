@@ -62,6 +62,8 @@ function listAllTweets(){
                 div.appendChild(date); 
 
                 tweetsElement.appendChild(div);
+
+                
                
             });
             loadingElement.style.display='none';

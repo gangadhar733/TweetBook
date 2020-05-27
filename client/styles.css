@@ -1,6 +1,6 @@
 .title{
     text-align: center;
-    color: rgb(54, 46, 34);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .new-form, .loading{
@@ -9,25 +9,29 @@
     margin: 0 auto;
 }
 
-.header{
-    color: floralwhite;
-    
-}
 
-.button{
-    align-items: center;
+
+.Buttons{
+    text-align: center;
 }
 .bodyc{
+    background-color:#4dbfe6 ;
+}
+
+.card{
     background-color: #99ffff ;
 }
 
 .tweets{
 
-    width: 40%;
+    width: 100%;
     margin: 0 auto;
     align-items: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: rgb(54, 46, 34) ;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    
 }
 
 
+.container{
+    padding: 50px;
+}
