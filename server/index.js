@@ -1,15 +1,23 @@
 const express=require('express');
 const cors=require('cors');
 const monk=require('monk');
+const Filter=require('bad-words');
+const rateLimit=require('express-rate-limit');
+const ObjectId = require("mongodb").ObjectID;
+const MONGO_URI="mongodb+srv://dbadmin:<RsFCbiXK_.jb$8Z>@mycluster-zeh1p.gcp.mongodb.net/test?retryWrites=true&w=majority"
+    
 
 const app=express();
 
-const db=monk('localhost/tweetbook');
+const db=monk(process.env.MONGO_URI || 'localhost/tweetbook');
 
 const tweets=db.get('tweets');
+const filter=new Filter();
+
 
 app.use(cors());
 app.use(express.json());
+
 
 app.get('/',(req,res)=>{
     res.json({
@@ -31,12 +39,17 @@ function isvalidTweet(tweet){
         tweet.content && tweet.content.toString().trim()!=='';
 }
 
+app.use(rateLimit({
+    windowMs:20*1000,//10 seconds
+    max:1//limit each IP to 1 requests per widowMs
+}));
+
 app.post('/tweets',(req,res)=>{
     if(isvalidTweet(req.body)){
         //insert into db...
         const tweet={
-            name:req.body.name.toString(),
-            content:req.body.content.toString(),
+            name:filter.clean(req.body.name.toString()),
+            content:filter.clean(req.body.content.toString()),
             created:new Date()
 
         };

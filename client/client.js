@@ -32,10 +32,13 @@ form.addEventListener('submit',(event)=>{
   }).then(response=>response.json())
     .then(createdTweet=>{
         form.reset();
-        form.style.display='';
+        setTimeout(()=>{
+            form.style.display='';
+        },1000);
+        
         listAllTweets();
         
-    })
+    });
 });
 
 function listAllTweets(){
@@ -48,10 +51,10 @@ function listAllTweets(){
             tweets.forEach(tweet=>{
                 const div=document.createElement('div');
 
-                const header=document.createElement('h3');
+                const header=document.createElement('h1');
                 header.textContent=tweet.name;
 
-                const contents=document.createElement('p');
+                const contents=document.createElement('h4');
                 contents.textContent=tweet.content;
 
                 const date=document.createElement('small');
